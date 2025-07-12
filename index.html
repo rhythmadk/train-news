@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>TrainWire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { background: #fff300; color: black; font-family: sans-serif; margin: 0; }
-        header { background: black; color: #fff300; padding: 20px; text-align: center; font-size: 2em; }
-        main { padding: 20px; }
-        footer { background: black; color: #fff300; text-align: center; padding: 10px; }
-        .donate { text-align: center; margin-top: 30px; }
-        .donate a { background: black; color: #fff300; padding: 10px 20px; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locomotive Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; line-height: 1.6; }
+    header { background: #000; color: #fff; padding: 3rem 2rem; text-align: center; }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    header p { font-size: 1.2rem; opacity: 0.8; }
+    section { padding: 5rem 2rem; max-width: 900px; margin: auto; }
+    section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    .topics { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .topic-box { background: #f2f2f2; padding: 2rem; border-radius: 8px; }
+    .cta { background: #000; color: #fff; text-align: center; padding: 4rem 2rem; }
+    .cta input[type=email] { padding: 0.8rem; width: 300px; border: none; margin-right: 1rem; border-radius: 4px; }
+    .cta button { padding: 0.8rem 1.5rem; background: #fff; color: #000; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; background: #000; color: #fff; }
+  </style>
 </head>
 <body>
-    <header>🚆 TrainWire</header>
-    <main>
-        <h2>Welcome to TrainWire</h2>
-        <p>Daily news, analysis, and case studies on global railway systems.</p>
-        <div class="donate">
-            <a href="https://buymeacoffee.com/YOUR_LINK" target="_blank">Support Us 💛</a>
-        </div>
-    </main>
-    <footer>© 2025 TrainWire. All rights reserved.</footer>
+  <header>
+    <h1>Locomotive Lab</h1>
+    <p>Case Studies & Insights on Global Rail Innovation</p>
+  </header>
+  <section>
+    <h2>Explore Our Topics</h2>
+    <div class="topics">
+      <div class="topic-box">
+        <h3>High-Speed Rail</h3>
+        <p>Technical insights on bullet trains and magnetic levitation systems.</p>
+      </div>
+      <div class="topic-box">
+        <h3>Urban Transit</h3>
+        <p>Metro systems, trams, and evolving public transport infrastructure.</p>
+      </div>
+      <div class="topic-box">
+        <h3>Infrastructure Engineering</h3>
+        <p>Track, signaling, electrification and safety innovations.</p>
+      </div>
+      <div class="topic-box">
+        <h3>Railway Policy & Investment</h3>
+        <p>Coverage of rail legislation, funding, and cross-border initiatives.</p>
+      </div>
+    </div>
+  </section>
+  <div class="cta">
+    <h2>Stay on Track</h2>
+    <p>Subscribe to our weekly dispatch</p>
+    <form>
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <footer>
+    © 2025 Locomotive Lab. All rights reserved.
+  </footer>
 </body>
 </html>
