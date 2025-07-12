@@ -7,56 +7,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; line-height: 1.6; }
-    header { background: #000; color: #fff; padding: 3rem 2rem; text-align: center; }
-    header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; opacity: 0.8; }
-    section { padding: 5rem 2rem; max-width: 900px; margin: auto; }
-    section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-    .topics { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .topic-box { background: #f2f2f2; padding: 2rem; border-radius: 8px; }
-    .cta { background: #000; color: #fff; text-align: center; padding: 4rem 2rem; }
-    .cta input[type=email] { padding: 0.8rem; width: 300px; border: none; margin-right: 1rem; border-radius: 4px; }
-    .cta button { padding: 0.8rem 1.5rem; background: #fff; color: #000; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
-    footer { text-align: center; padding: 2rem; font-size: 0.9rem; background: #000; color: #fff; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
+    }
+
+    main {
+      flex: 1;
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .topic {
+      background: #f5f5f5;
+      padding: 1.5rem;
+      border-left: 5px solid #ffd000;
+      border-radius: 6px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .topic h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .cta input[type=email] {
+      padding: 0.8rem;
+      width: 280px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 1rem;
+    }
+
+    .cta button {
+      padding: 0.8rem 1.2rem;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Locomotive Lab</h1>
-    <p>Case Studies & Insights on Global Rail Innovation</p>
-  </header>
-  <section>
-    <h2>Explore Our Topics</h2>
-    <div class="topics">
-      <div class="topic-box">
-        <h3>High-Speed Rail</h3>
-        <p>Technical insights on bullet trains and magnetic levitation systems.</p>
-      </div>
-      <div class="topic-box">
-        <h3>Urban Transit</h3>
-        <p>Metro systems, trams, and evolving public transport infrastructure.</p>
-      </div>
-      <div class="topic-box">
-        <h3>Infrastructure Engineering</h3>
-        <p>Track, signaling, electrification and safety innovations.</p>
-      </div>
-      <div class="topic-box">
-        <h3>Railway Policy & Investment</h3>
-        <p>Coverage of rail legislation, funding, and cross-border initiatives.</p>
-      </div>
+
+<header>
+  <h1>Locomotive Lab</h1>
+  <p>🚄 Deep Dives into the Future of Global Railways</p>
+</header>
+
+<main>
+  <h2>Explore Our Topics</h2>
+  <div class="topics">
+    <div class="topic">
+      <h3>High-Speed Rail</h3>
+      <p>Bullet trains, maglev, and beyond. Speed meets innovation.</p>
     </div>
-  </section>
+    <div class="topic">
+      <h3>Urban Transit</h3>
+      <p>Subways, metros, and public systems transforming cities.</p>
+    </div>
+    <div class="topic">
+      <h3>Infrastructure</h3>
+      <p>Signal systems, electrification, bridges and tunnels.</p>
+    </div>
+    <div class="topic">
+      <h3>Rail Policy & Investment</h3>
+      <p>Funding, cross-border rail diplomacy and mega-projects.</p>
+    </div>
+  </div>
+
   <div class="cta">
-    <h2>Stay on Track</h2>
-    <p>Subscribe to our weekly dispatch</p>
+    <h2 style="margin-bottom: 1rem;">📬 Stay in the Loop</h2>
     <form>
-      <input type="email" placeholder="Your email address" required>
+      <input type="email" placeholder="Your email..." required />
       <button type="submit">Subscribe</button>
     </form>
   </div>
-  <footer>
-    © 2025 Locomotive Lab. All rights reserved.
-  </footer>
+</main>
+
+<footer>
+  © 2025 Locomotive Lab. All rights reserved.
+</footer>
+
 </body>
 </html>
