@@ -3,264 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Locomotive Lab</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <title>Locomotive Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #ffd700;
+      --bg: #fffdf5;
+      --text: #111;
+      --border: #ddd;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fff;
-      color: #111;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-serif);
     }
 
     header {
-      padding: 2rem 3rem 1rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      padding: 2rem;
+      border-bottom: 1px dotted var(--border);
+      justify-content: space-between;
     }
 
-    .logo {
-      font-weight: 600;
-      font-size: 1.4rem;
-      color: #111;
-      letter-spacing: -0.03em;
+    header h1 {
+      font-size: 2.2rem;
+      font-family: var(--font-serif);
     }
 
-    nav {
-      font-size: 0.95rem;
-      color: #888;
-      display: none;
-    }
-
-    main {
-      padding: 3rem;
-      max-width: 900px;
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
       margin: auto;
     }
 
-    .headline {
-      font-size: 3.4rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
+    .sidebar, .featured {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .sidebar h2 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      color: #888;
+    }
+
+    .sidebar h3 {
+      font-size: 1.2rem;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      border-bottom: 1px dotted var(--border);
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      font-family: var(--font-sans);
+      padding: 0.5rem 0;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .featured .label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured p {
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
 
-    .subheadline {
-      font-size: 1.2rem;
-      color: #444;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-
-    .rail-line {
-      margin-top: 4rem;
-      height: 1px;
-      background: repeating-linear-gradient(
-        to right,
-        #ccc 0px,
-        #ccc 2px,
-        transparent 2px,
-        transparent 10px
-      );
-    }
-
     footer {
-      padding: 3rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #aaa;
+      padding: 2rem 1rem;
+      color: #888;
+      border-top: 1px dotted var(--border);
+      font-family: var(--font-sans);
     }
 
-    @media (max-width: 600px) {
-      .headline {
-        font-size: 2.2rem;
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
       }
 
-      main {
-        padding: 2rem;
-      }
-
-      header {
-        padding: 1.5rem 2rem 1rem;
-      }
+      .sidebar { display: none; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Locomotive Lab</div>
+    <h1>Locomotive Labs</h1>
+    <div style="font-family: var(--font-sans); font-size: 0.9rem; color: #999;">
+      A Publication by Locomotive Media Group
+    </div>
   </header>
 
-  <main>
-    <div class="headline">Reinventing Rail Journalism</div>
-    <div class="subheadline">
-      Deep dives into high-speed transit, infrastructure policy, and the future of global mobility—one rail at a time.
-    </div>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Locomotive Labs</h2>
+      <h3>Newsroom</h3>
+      <ul>
+        <li>Hyperloop Trials Begin</li>
+        <li>Rail Freight Gains in EU</li>
+        <li>AI Signals in Indian Railways</li>
+        <li>Belgium Metro Overhaul</li>
+      </ul>
+    </aside>
 
-    <div class="rail-line"></div>
-  </main>
+    <section class="featured">
+      <div class="label">Locomotive Labs Insight+</div>
+      <h1>Hyperloop Trials Begin in Japan</h1>
+      <p>
+        In a historic test run this week, Japan launched its first Hyperloop trial between Nagoya and Tokyo. Speeds may reach up to 1000 km/h.
+      </p>
+      <p>
+        This article breaks down the tech, policy, and future implications.
+      </p>
+      <p><a href="#">Read full case study →</a></p>
+    </section>
 
-  <footer>
-    © 2025 Locomotive Lab · All Rights Reserved
-  </footer>
+    <aside class="sidebar">
+      <h2>Locomotive Labs</h2>
+      <h3>Opinion</h3>
+      <ul>
+        <li>Why Europe Still Struggles with High-Speed Rail</li>
+        <li>Freight vs. Passenger: A Policy Dilemma</li>
+        <li>How India Can Leapfrog with AI in Rail</li>
+        <li>Urban Transit vs. Climate Deadlines</li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>© 2025 Locomotive Labs · All Rights Reserved</footer>
 </body>
 </html>
-
-<section class="featured-article">
-  <h1>🚄 Hyperloop Trials Begin in Japan</h1>
-  <p class="subhead">A glimpse into the future of ultra-fast rail travel.</p>
-  <img src="https://example.com/hyperloop.jpg" alt="Hyperloop" style="width:100%; border-radius: 8px; margin-top: 1rem;">
-  <p style="font-size: 1rem; margin-top: 1rem; line-height:1.6;">
-    In a historic test run this week, Japan launched its first Hyperloop trial between Nagoya and Tokyo. Capable of speeds up to 1000 km/h, this could revolutionize transportation across Asia.
-  </p>
-  <a href="hyperloop-article.html" style="display:inline-block; margin-top:1rem; font-weight:bold; color:#000; text-decoration:underline;">Read more →</a>
-</section>
-
-
-<style>
-  .featured-article {
-    padding: 4rem 2rem;
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-  }
-
-  .featured-article h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .featured-article .subhead {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-</style>
-
-
-<section class="layout-container">
-  <aside class="left-sidebar">
-    <h2>Trending</h2>
-    <ol>
-      <li><a href="#">🚄 Hyperloop Trials Begin</a></li>
-      <li><a href="#">🏙️ Urban Transit Boom</a></li>
-      <li><a href="#">📊 Rail Investment Act</a></li>
-      <li><a href="#">🔋 Electrified Freight Routes</a></li>
-    </ol>
-  </aside>
-
-  <main class="featured">
-    <h1>🚄 Hyperloop Trials Begin in Japan</h1>
-    <p class="subhead">A glimpse into the future of ultra-fast rail travel.</p>
-    <img src="https://source.unsplash.com/800x400/?train" alt="Hyperloop" style="width:100%; border-radius: 8px; margin-top: 1rem;">
-    <p style="font-size: 1rem; margin-top: 1rem; line-height:1.6;">
-      In a historic test run this week, Japan launched its first Hyperloop trial between Nagoya and Tokyo. Speeds exceeded 900 km/h, hinting at a revolution in long-distance transport.
-    </p>
-    <a href="#" style="display:inline-block; margin-top:1rem; font-weight:bold; color:#000; text-decoration:underline;">Read more →</a>
-  </main>
-
-  <aside class="right-sidebar">
-    <h2>Case Studies</h2>
-    <div class="case">
-      <img src="https://source.unsplash.com/400x200/?subway" alt="Subway" />
-      <h3>AI-Powered Traffic in Seoul</h3>
-      <p>How AI is transforming urban rail efficiency and passenger flow.</p>
-    </div>
-    <div class="case">
-      <img src="https://source.unsplash.com/400x200/?infrastructure" alt="Infra" />
-      <h3>Green Tunnels in Norway</h3>
-      <p>Inside the eco-friendly infrastructure strategy reshaping Norway’s rail.</p>
-    </div>
-  </aside>
-</section>
-
-
-<style>
-  .layout-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .left-sidebar, .right-sidebar {
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  .left-sidebar h2,
-  .right-sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .left-sidebar ol {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .left-sidebar li {
-    margin-bottom: 0.8rem;
-  }
-
-  .left-sidebar a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .featured h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-
-  .featured .subhead {
-    font-size: 1.2rem;
-    color: #666;
-  }
-
-  .right-sidebar .case {
-    margin-bottom: 2rem;
-  }
-
-  .right-sidebar img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-  }
-
-  .right-sidebar h3 {
-    margin: 0.3rem 0;
-    font-size: 1.1rem;
-  }
-
-  .right-sidebar p {
-    font-size: 0.9rem;
-    color: #444;
-  }
-
-  @media screen and (max-width: 768px) {
-    .layout-container {
-      grid-template-columns: 1fr;
-    }
-
-    .left-sidebar, .right-sidebar {
-      display: none;
-    }
-  }
-</style>
-
